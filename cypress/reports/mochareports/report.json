@@ -1,0 +1,111 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-01-26T18:19:23.864Z",
+    "end": "2022-01-26T18:19:33.396Z",
+    "duration": 9374,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "84bc6745-61d7-4749-ad5d-a83df086f561",
+      "title": "",
+      "fullFile": "cypress/integration/1-getting-started/TC_04_POM_Login.js",
+      "file": "cypress/integration/1-getting-started/TC_04_POM_Login.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b5e7e6b0-4ca4-42ef-a365-4f3390a1e0f6",
+          "title": "Login(POMlogin)",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "SignIn",
+              "fullTitle": "Login(POMlogin) SignIn",
+              "timedOut": null,
+              "duration": 9374,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"\\\\1-getting-started\\\\TC_04_POM_Login.js\\\\Login(POMlogin) -- SignIn (failed).png\"\n        }\n      ]\n    ]\n  },\n  \"assets/1-getting-started/TC_04_POM_Login.js/Login(POMlogin) -- SignIn (failed).png\"\n]",
+              "code": "cy.visit('https://react-redux.realworld.io/#/login');\nlogin.email().type('qamilestone.academy@gmail.com');\nlogin.password().type('admin123');\nlogin.signInButton().should('be.visible').click();\ncy.get('input[type=\"password5\"]').should('be.visible'); //expect to fail",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[type=\"password5\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[type=\"password5\"]`, but never found it.\n    at Context.eval (https://react-redux.realworld.io/__cypress/tests?p=cypress\\integration\\1-getting-started\\TC_04_POM_Login.js:130:39)",
+                "diff": null
+              },
+              "uuid": "bef8f62e-45a5-4458-91eb-3eeb2480501a",
+              "parentUUID": "b5e7e6b0-4ca4-42ef-a365-4f3390a1e0f6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "bef8f62e-45a5-4458-91eb-3eeb2480501a"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 9374,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.3.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

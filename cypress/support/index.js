@@ -18,3 +18,18 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+import 'cypress-mochawesome-reporter/register';
+import addContext from "mochawesome/addContext";
+// cypress/support/index.js
+// load and register the grep feature
+
+require('cypress-grep')()
+
+Cypress.on("test:after:run", (test, runnable) => {  
+    if (test.state === "failed") {    
+        const screenshot =`assets/${Cypress.spec.name}/${runnable.parent.title} -- ${test.title} (failed).png`;    
+        addContext({ test }, screenshot);  
+    }
+  });
+
