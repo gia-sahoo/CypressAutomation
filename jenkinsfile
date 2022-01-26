@@ -10,6 +10,9 @@ pipeline {
     options{
         ansiColor('xterm')
     }
+    environment {
+         PATH = "C:\\WINDOWS\\SYSTEM32"
+    }
     stages{
         stage('Building'){
             steps{
