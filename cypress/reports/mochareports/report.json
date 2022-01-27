@@ -2,14 +2,14 @@
   "stats": {
     "suites": 1,
     "tests": 1,
-    "passes": 1,
+    "passes": 0,
     "pending": 0,
-    "failures": 0,
-    "start": "2022-01-27T04:31:36.049Z",
-    "end": "2022-01-27T04:31:41.014Z",
-    "duration": 4864,
+    "failures": 1,
+    "start": "2022-01-27T16:59:24.144Z",
+    "end": "2022-01-27T16:59:33.142Z",
+    "duration": 8840,
     "testsRegistered": 1,
-    "passPercent": 100,
+    "passPercent": 0,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "e2f92932-e2ee-4817-affd-1e27b3beb924",
+      "uuid": "feb86116-cdc5-4021-96b9-46be630ffde9",
       "title": "",
       "fullFile": "cypress/integration/1-getting-started/TC_04_POM_Login.js",
       "file": "cypress/integration/1-getting-started/TC_04_POM_Login.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "c1a79f6a-573e-4263-9f36-5374a5a5eafb",
+          "uuid": "d187d0e3-19d4-464b-a9dc-0cea89baae62",
           "title": "Login(POMlogin)",
           "fullFile": "",
           "file": "",
@@ -38,29 +38,33 @@
               "title": "SignIn",
               "fullTitle": "Login(POMlogin) SignIn",
               "timedOut": null,
-              "duration": 4864,
-              "state": "passed",
-              "speed": "fast",
-              "pass": true,
-              "fail": false,
+              "duration": 8840,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
               "pending": false,
-              "context": null,
-              "code": "cy.visit('https://react-redux.realworld.io/#/login');\nlogin.email().type('qamilestone.academy@gmail.com');\nlogin.password().type('admin123');\nlogin.signInButton().should('be.visible').click(); //cy.get('input[type=\"password5\"]').should('be.visible')//expect to fail",
-              "err": {},
-              "uuid": "193935b5-cfb2-4c87-b95a-b6d7283936e2",
-              "parentUUID": "c1a79f6a-573e-4263-9f36-5374a5a5eafb",
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"\\\\1-getting-started\\\\TC_04_POM_Login.js\\\\Login(POMlogin) -- SignIn (failed).png\"\n        }\n      ]\n    ]\n  },\n  \"assets/1-getting-started/TC_04_POM_Login.js/Login(POMlogin) -- SignIn (failed).png\"\n]",
+              "code": "cy.visit('https://react-redux.realworld.io/#/login');\nlogin.email().type('qamilestone.academy@gmail.com');\nlogin.password().type('admin123');\nlogin.signInButton().should('be.visible').click();\ncy.get('input[type=\"password5\"]').should('be.visible'); //expect to fail",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[type=\"password5\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[type=\"password5\"]`, but never found it.\n    at Context.eval (https://react-redux.realworld.io/__cypress/tests?p=cypress\\integration\\1-getting-started\\TC_04_POM_Login.js:130:39)",
+                "diff": null
+              },
+              "uuid": "15eacc73-e3cb-449b-a973-5e7035b61a23",
+              "parentUUID": "d187d0e3-19d4-464b-a9dc-0cea89baae62",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
-          "passes": [
-            "193935b5-cfb2-4c87-b95a-b6d7283936e2"
+          "passes": [],
+          "failures": [
+            "15eacc73-e3cb-449b-a973-5e7035b61a23"
           ],
-          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 4864,
+          "duration": 8840,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
