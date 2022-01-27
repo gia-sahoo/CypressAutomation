@@ -3,9 +3,7 @@ pipeline {
     agent any
 
     parameters{
-        string(name: 'SPEC', 
-        defaultValue: "cypress/integration/**/**", 
-        description: "Enter the script path"),
+        string(name: 'SPEC', defaultValue: "cypress/integration/**/**",description: "Enter the script path")
         choice(name: 'BROSWER',choices: ['chrome','edge','firefox','electron'],description: "select the browser" )
 		
     }
@@ -26,8 +24,8 @@ pipeline {
         stage('Testing'){
             steps{
 			
-				def generatereport =  "marge cypress/reports/mochareports/report.json -f report -o cypress/reports/mochareports --inline",
-				def posttest =  "npm run combine-reports && npm run ${generatereport}",
+				def generatereport =  "marge cypress/reports/mochareports/report.json -f report -o cypress/reports/mochareports --inline"
+				def posttest =  "npm run combine-reports && npm run ${generatereport}"
 				def scripts =  "cypress run"
 			    bat "npm i"  
                 bat "npm run ${scripts} --browser ${BROSWER} --spec ${SPEC} || npm run ${posttest}"
