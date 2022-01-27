@@ -6,8 +6,8 @@ pipeline {
         string(name: 'SPEC', 
         defaultValue: "cypress/integration/**/**", 
         description: "Enter the script path",
-        ,generate-report: "marge cypress/reports/mochareports/report.json -f report -o cypress/reports/mochareports --inline",
-        posttest: "npm run combine-reports && npm run generate-report",
+        ,generatereport: "marge cypress/reports/mochareports/report.json -f report -o cypress/reports/mochareports --inline",
+        posttest: "npm run combine-reports && npm run generatereport",
         scripts: "cypress run"),
         choice(name: 'BROSWER',choices: ['chrome','edge','firefox','electron'],description: "select the browser" )
 		
