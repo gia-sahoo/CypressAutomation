@@ -23,10 +23,12 @@ pipeline {
         }
         stage('Testing'){
             steps{
-			
-				def generatereport =  "marge cypress/reports/mochareports/report.json -f report -o cypress/reports/mochareports --inline"
-				def posttest =  "npm run combine-reports && npm run ${generatereport}"
-				def scripts =  "cypress run"
+                scripts{
+                    def generatereport =  "marge cypress/reports/mochareports/report.json -f report -o cypress/reports/mochareports --inline"
+				    def posttest =  "npm run combine-reports && npm run ${generatereport}"
+				    def scripts =  "cypress run"
+                }
+					
 			    bat "npm i"  
                 bat "npm run ${scripts} --browser ${BROSWER} --spec ${SPEC} || npm run ${posttest}"
             }
