@@ -39,9 +39,8 @@ pipeline {
             keepAll: true, 
             reportDir: 'cypress\\reports\\mochareports', 
             reportFiles: 'report.html', 
-            reportName: 'HTML_Report', reportTitles: ''])
+            reportName: 'report', 
+            reportTitles: 'Summary'])
         }
-
     }
-
 }
