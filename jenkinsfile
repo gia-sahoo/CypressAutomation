@@ -1,5 +1,5 @@
 def generatereport =  "marge cypress/reports/mochareports/report.json -f report -o cypress/reports/mochareports --inline"
-def posttest =  "npm run combine-reports && npm run ${generatereport}",
+def posttest =  "npm run combine-reports && npm run ${generatereport}"
 def scripts =  "cypress run"
 pipeline {
     
