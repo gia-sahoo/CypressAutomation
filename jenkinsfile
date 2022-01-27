@@ -11,7 +11,7 @@ pipeline {
         ansiColor('xterm')
     }
     environment {
-         PATH = "C:\\WINDOWS\\SYSTEM32";"C:\\Program Files\nodejs\\"
+         PATH = "C:\\WINDOWS\\SYSTEM32"
     }
     stages{
         stage('Building'){
