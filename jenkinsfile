@@ -27,7 +27,7 @@ pipeline {
         stage('Testing'){
             steps{
                 bat "npm i"  
-                bat "npm cypress run --spec ${SPEC} --browser ${BROSWER}  || npm run ${posttest}"
+                bat "npm cypress run --spec cypress/integration/1-getting-started/TC_04_POM_Login.js --browser electron  || npm run ${posttest}"
             }
          }
          stage('Deploying'){
