@@ -27,7 +27,7 @@ pipeline {
         stage('Testing'){
             steps{
                 bat "npm i"  
-                bat "npm run test --browser electron"
+                bat "npm run scripts --spec ${SPEC} --browser electron"
             }
          }
          stage('Deploying'){
@@ -38,6 +38,7 @@ pipeline {
     }
     post{
         always{
+            bat "npm run posttest"
             publishHTML([allowMissing: false, 
             alwaysLinkToLastBuild: false, 
             keepAll: true, 
