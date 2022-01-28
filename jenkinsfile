@@ -1,6 +1,6 @@
 def generatereport =  "marge cypress/reports/mochareports/report.json -f report -o cypress/reports/mochareports --inline"
 def posttest =  "combine-reports && npm run ${generatereport}"
-def scripts =  "cypress run"
+def scripts =  "cypress run --spec ${SPEC}"
 pipeline {
     
     agent any
@@ -27,7 +27,7 @@ pipeline {
         stage('Testing'){
             steps{
                 bat "npm i"  
-                bat "npm run ${scripts} --browser ${BROSWER} --spec ${SPEC} || npm run ${posttest}"
+                bat "npm run ${scripts} --browser ${BROSWER}  || npm run ${posttest}"
             }
          }
          stage('Deploying'){

@@ -5,9 +5,9 @@
     "passes": 0,
     "pending": 0,
     "failures": 1,
-    "start": "2022-01-27T16:59:24.144Z",
-    "end": "2022-01-27T16:59:33.142Z",
-    "duration": 8998,
+    "start": "2022-01-28T04:04:27.900Z",
+    "end": "2022-01-28T04:04:37.097Z",
+    "duration": 9197,
     "testsRegistered": 1,
     "passPercent": 0,
     "pendingPercent": 0,
@@ -18,41 +18,41 @@
   },
   "results": [
     {
-      "uuid": "feb86116-cdc5-4021-96b9-46be630ffde9",
+      "uuid": "a33d6ff2-b72e-492e-a8df-d247e4d3f592",
       "title": "",
-      "fullFile": "cypress/integration/1-getting-started/TC_04_POM_Login.js",
-      "file": "cypress/integration/1-getting-started/TC_04_POM_Login.js",
+      "fullFile": "cypress/integration/1-getting-started/test01.js",
+      "file": "cypress/integration/1-getting-started/test01.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "d187d0e3-19d4-464b-a9dc-0cea89baae62",
-          "title": "Login(POMlogin)",
+          "uuid": "fcc489ba-3b5b-4347-85cf-18b8d068644f",
+          "title": "My First TestSuite",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [
             {
-              "title": "SignIn",
-              "fullTitle": "Login(POMlogin) SignIn",
+              "title": "Login Test",
+              "fullTitle": "My First TestSuite Login Test",
               "timedOut": null,
-              "duration": 8840,
+              "duration": 9101,
               "state": "failed",
               "speed": null,
               "pass": false,
               "fail": true,
               "pending": false,
-              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"\\\\1-getting-started\\\\TC_04_POM_Login.js\\\\Login(POMlogin) -- SignIn (failed).png\"\n        }\n      ]\n    ]\n  },\n  \"assets/1-getting-started/TC_04_POM_Login.js/Login(POMlogin) -- SignIn (failed).png\"\n]",
-              "code": "cy.visit('https://react-redux.realworld.io/#/login');\nlogin.email().type('qamilestone.academy@gmail.com');\nlogin.password().type('admin123');\nlogin.signInButton().should('be.visible').click();\ncy.get('input[type=\"password5\"]').should('be.visible'); //expect to fail",
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"\\\\1-getting-started\\\\test01.js\\\\My First TestSuite -- Login Test (failed).png\"\n        }\n      ]\n    ]\n  },\n  \"assets/1-getting-started/test01.js/My First TestSuite -- Login Test (failed).png\"\n]",
+              "code": "//Arrange\ncy.visit(\"https://react-redux.realworld.io/#/login?_k=g43dop\"); //Act\ncy.fixture(\"logindetails.json\").then(user => {\n  cy.get('input[type=\"email\"]').type(user.email);\n  cy.get('input[type=\"password\"]').type(user.password);\n});\ncy.get('button[type=\"submit\"]').click(); //Assert\ncy.contains(\"No articles are here... yet.\").should(\"be.visible\");",
               "err": {
-                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[type=\"password5\"]`, but never found it.",
-                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[type=\"password5\"]`, but never found it.\n    at Context.eval (https://react-redux.realworld.io/__cypress/tests?p=cypress\\integration\\1-getting-started\\TC_04_POM_Login.js:130:39)",
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'No articles are here... yet.' but never did.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'No articles are here... yet.' but never did.\n    at Context.eval (https://react-redux.realworld.io/__cypress/tests?p=cypress\\integration\\1-getting-started\\test01.js:125:49)",
                 "diff": null
               },
-              "uuid": "15eacc73-e3cb-449b-a973-5e7035b61a23",
-              "parentUUID": "d187d0e3-19d4-464b-a9dc-0cea89baae62",
+              "uuid": "5a0069cc-31b8-455b-af37-7c6d63099056",
+              "parentUUID": "fcc489ba-3b5b-4347-85cf-18b8d068644f",
               "isHook": false,
               "skipped": false
             }
@@ -60,11 +60,11 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "15eacc73-e3cb-449b-a973-5e7035b61a23"
+            "5a0069cc-31b8-455b-af37-7c6d63099056"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 8840,
+          "duration": 9101,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
