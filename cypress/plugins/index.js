@@ -31,3 +31,4 @@ module.exports = (on, config) => {
   // https://github.com/bahmutov/cypress-grep
   require('cypress-grep/src/plugin')(config)
 }
+
