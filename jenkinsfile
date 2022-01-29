@@ -26,6 +26,7 @@ pipeline {
         }
         stage('Testing'){
             steps{
+                bat "npm run pretest"
                 bat "npm i"  
                 bat "npx cypress run --spec ${SPEC} --browser ${BROSWER}"
             }
