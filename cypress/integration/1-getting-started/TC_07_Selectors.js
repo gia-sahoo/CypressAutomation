@@ -2,7 +2,7 @@
 
 describe('Cypress Selectos',() => {
 
-    it('SampleSelectos',() =>{
+    it.only('SampleSelectos',() =>{
         Cypress.config('defaultCommandTimeout', 10000);
 
         cy.visit('https://react-redux.realworld.io/#/?_k=l3qfn0')
